@@ -6,21 +6,21 @@ function zad1(){
 		exit -1
 	fi
 	if ! [[ -e $2 ]]; then
-		echo "kurla"
+		echo "ni ma pliku"
 		touch $2
 	fi
 	if ! [[ -e $3 ]]; then
 		touch $3
 	fi
 	if ! [[ -w $2 ]]; then 
-		echo "jebac"
+		echo "ni dopisze wiec se nadam prawa"
 		chmod +w $2
 	fi
 	if ! [[ -w $3 ]]; then
 		chmod +w $3
 	fi
 	if ! [[ -s $2 ]]; then
-		echo "" > $2
+		echo "nie istnial albo nie byl pusty" > $2
 	fi
 	if [[ -s $3 ]]; then
 		echo "" > $3
@@ -53,7 +53,7 @@ function zad2(){
 	#cat katalogi 
 	mkdir $sciezka_katalogu
 	if [[ ! -e sciezka_pliku ]]; then
-		echo "ni ma i chuj"
+		echo "ni ma "
 	fi
 	echo $sciezka_katalogu
 
@@ -125,8 +125,6 @@ function zad2(){
 
 zad2 $4 $5
 
-#Zadanie 1
-#Utwórz funkcję, która rozdzieli linie oryginalnego pliku do dwóch plików wyjściowych
 #• Ścieżka do pliku źródłowego znajduje się w pierwszym argumencie.
 #• Scieżki do plików wyjściowych znajdują się w kolejnych argumentach.
 #• Dla każdej linii pliku wejściowego należy podjąć decyzję czy trafi do pierwszego czy do drugiego
